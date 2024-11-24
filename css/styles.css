@@ -112,6 +112,18 @@ meter {
   display: none;
 }
 
+@font-face {
+  font-family: "Fraunces";
+  src: url(../assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf)
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../assets/fonts/manrope/Manrope-VariableFont_wght.ttf)
+    format("truetype");
+}
+
 html {
   font-family: "Manrope", sans-serif;
   font-size: 18px;
@@ -124,6 +136,8 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  max-width: 375px;
+  margin: auto;
   min-height: 100vh;
 }
 
@@ -155,18 +169,19 @@ body {
 
 .header__title {
   font-family: "Fraunces", serif;
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 40px;
 }
 
-.header__button {
+.header__button,
+.cta__button {
   background-color: #44ffa1;
   border: none;
   color: #24053e;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   padding: 12px 32px;
 }
 
@@ -182,4 +197,96 @@ body {
   margin-top: -124px;
   padding: 0 20px;
   z-index: 2;
+}
+
+.features {
+  position: relative;
+  background-color: #fcf8ff;
+  padding: 64px 20px;
+}
+
+.features__item {
+  margin-bottom: 32px;
+}
+
+.features__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.features__number {
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  border: #24053e 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 24px;
+}
+
+.features__title {
+  font-family: "Fraunces", serif;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.features__content {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.section__decoration {
+  border: #fcf8ff 24px solid;
+  clip-path: ellipse(60% 100% at 50% 0);
+  margin-top: -24px;
+}
+
+.cta {
+  position: relative;
+  padding: 112px 20px 0 20px;
+}
+
+.cta__image {
+  width: 280px;
+  height: 280px;
+}
+
+.cta-item-btn__wrap {
+  position: relative;
+  background-color: #24053e;
+  color: #fff;
+  padding: 32px;
+  margin-top: -60px;
+  z-index: 2;
+}
+
+.cta__title {
+  font-family: "Fraunces", serif;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.cta__content {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.footer {
+  padding: 80px;
+}
+
+.footer__logo {
+  margin-bottom: 56px;
+}
+
+.footer__social a {
+  margin-right: 28px;
+}
+
+.footer__social a:last-child {
+  margin-right: 0;
 }
