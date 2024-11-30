@@ -49,6 +49,7 @@ ol {
 img {
   max-inline-size: 100%;
   max-block-size: 100%;
+  loading: lazy;
 }
 
 /* Tables */
@@ -144,6 +145,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 375px;
   margin: auto;
   min-height: 100vh;
   text-align: center;
@@ -173,16 +175,26 @@ body {
   border-bottom: var(--color-secondary) 3px solid;
 }
 
+.nav__link:hover {
+  color: var(--color-secondary);
+}
+
 /* Common Button Styles */
 .header__button,
 .cta__button {
   display: inline-block;
   background-color: var(--color-secondary);
-  border: none;
+  border: var(--color-secondary) 2px solid;
   color: var(--color-primary);
   font-size: 16px;
   font-weight: bold;
   padding: 12px 32px;
+}
+
+.header__button:hover,
+.cta__button:hover {
+  background-color: transparent;
+  color: var(--color-secondary);
 }
 
 /* Header Specific */
@@ -301,13 +313,31 @@ body {
   margin-right: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (min-width: 768px) {
+  body {
+    max-width: 768px;
+    margin: auto;
+  }
   .nav {
     padding: 32px 44px 0;
   }
 
   .header {
     padding: 56px 44px 185px;
+    position: relative;
+    overflow: hidden;
   }
 
   .header__title {
@@ -322,14 +352,14 @@ body {
 
   .header__bg-pattern-1 {
     position: absolute;
-    top: 70px;
-    left: -230px;
+    top: -5px;
+    left: -220px;
     z-index: 1;
   }
 
   .header__bg-pattern-2 {
     position: absolute;
-    top: 280px;
+    top: 220px;
     right: -100px;
     z-index: 1;
   }
@@ -399,5 +429,125 @@ body {
     top: 285px;
     left: 255px;
     z-index: 1;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    margin: auto;
+  }
+  .nav {
+    padding: 56px 80px 0 80px;
+  }
+
+  .header {
+    padding: 56px 80px 350px;
+  }
+
+  .header__title {
+    font-size: 80px;
+  }
+
+  .header__button,
+  .cta__button {
+    font-size: 18px;
+    padding: 12px 32px;
+  }
+
+  .header__bg-pattern-1 {
+    position: absolute;
+    top: 50px;
+    left: -170px;
+    z-index: 1;
+  }
+
+  .header__bg-pattern-2 {
+    position: absolute;
+    top: 220px;
+    right: -50px;
+    z-index: 1;
+  }
+
+  .nav-header__wrap {
+    clip-path: ellipse(110% 100% at 50% 0);
+  }
+
+  .header__figure-image {
+    margin-top: -275px;
+    height: 441px;
+    width: 767px;
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    gap: 32px;
+    padding: 88px 160px 144px;
+    clip-path: ellipse(110% 100% at 50% 0);
+  }
+
+  .features__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+  }
+
+  .features__item-number {
+    font-size: 24px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .features__item-content {
+    text-align: center;
+  }
+
+  .features__title {
+    font-size: 32px;
+  }
+
+  .features__content {
+    font-size: 18px;
+  }
+
+  .cta {
+    padding: 112px 160px 0;
+  }
+
+  .cta__image {
+    width: 477px;
+    height: 477px;
+  }
+
+  .cta-item-btn__wrap {
+    margin-left: 390px;
+    margin-top: -300px;
+    padding: 64px;
+    text-align: left;
+    width: 730px;
+  }
+
+  .cta__title {
+    font-size: 56px;
+  }
+
+  .cta__content {
+    font-size: 18px;
+  }
+
+  .cta__bg-pattern-3 {
+    position: absolute;
+    top: 265px;
+    left: 405px;
+    z-index: 1;
+  }
+
+  .footer {
+    padding: 112px 80px;
   }
 }
